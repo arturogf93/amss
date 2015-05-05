@@ -1,78 +1,77 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-           http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         version="2.5">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee            http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <!-- A continuacion deben declararse todas las Interfaces que se implementan como
          Servlets en el sistema. Para cada Interfaz deben declararse los tags
          <servlet> y <servlet-mapping>
      -->
+    <servlet>
+        <servlet-name>Publicar</servlet-name>
+        <servlet-class>interfaces.InterfazPublicar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Publicar</servlet-name>
+        <url-pattern>/Publicar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Votar</servlet-name>
+        <servlet-class>interfaces.InterfazVotar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Votar</servlet-name>
+        <url-pattern>/Votar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Aprobar</servlet-name>
+        <servlet-class>interfaces.InterfazAprobar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Aprobar</servlet-name>
+        <url-pattern>/Aprobar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CrearEdicion</servlet-name>
+        <servlet-class>interfaces.InterfazCrearEdicion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CrearEdicion</servlet-name>
+        <url-pattern>/CrearEdicion</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BajaJuez</servlet-name>
+        <servlet-class>interfaces.InterfazBajaJuez</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BajaJuez</servlet-name>
+        <url-pattern>/BajaJuez</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AltaJuez</servlet-name>
+        <servlet-class>interfaces.InterfazAltaJuez</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AltaJuez</servlet-name>
+        <url-pattern>/AltaJuez</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AltaAutor</servlet-name>
+        <servlet-class>interfaces.InterfazRegistrarArticulo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AltaAutor</servlet-name>
+        <url-pattern>/AltaAutor</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AltaCliente</servlet-name>
+        <servlet-class>interfaces.InterfazAltaCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AltaCliente</servlet-name>
+        <url-pattern>/AltaCliente</url-pattern>
+    </servlet-mapping>
+    
 
-  <servlet>
-    <servlet-name>Publicar</servlet-name>
-    <servlet-class>interfaces.InterfazPublicar</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>Publicar</servlet-name>
-      <url-pattern>/Publicar</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>Votar</servlet-name>
-    <servlet-class>interfaces.InterfazVotar</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>Votar</servlet-name>
-      <url-pattern>/Votar</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>Aprobar</servlet-name>
-    <servlet-class>interfaces.InterfazAprobar</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>Aprobar</servlet-name>
-      <url-pattern>/Aprobar</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>CrearEdicion</servlet-name>
-    <servlet-class>interfaces.InterfazCrearEdicion</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>CrearEdicion</servlet-name>
-      <url-pattern>/CrearEdicion</url-pattern>
-  </servlet-mapping>
-
- <servlet>
-    <servlet-name>BajaJuez</servlet-name>
-    <servlet-class>interfaces.InterfazBajaJuez</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>BajaJuez</servlet-name>
-      <url-pattern>/BajaJuez</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>AltaJuez</servlet-name>
-    <servlet-class>interfaces.InterfazAltaJuez</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>AltaJuez</servlet-name>
-      <url-pattern>/AltaJuez</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-    <servlet-name>AltaAutor</servlet-name>
-    <servlet-class>interfaces.InterfazAltaAutor</servlet-class>
-  </servlet>
-  <servlet-mapping>
-      <servlet-name>AltaAutor</servlet-name>
-      <url-pattern>/AltaAutor</url-pattern>
-  </servlet-mapping>
-<!--
+    <!--
 <servlet>
     <servlet-name>HelloWorld</servlet-name> 
     <servlet-class>com.swengsol.HelloWorldServlet</servlet-class> 

@@ -12,7 +12,7 @@ public class Juez {
     try {
       String userName = "root"; //usuario de mysql
       String password = "password"; //password de mysql
-      String url = "jdbc:mysql://162.243.134.61/test"; //test es el nombre de la base de datos
+      String url = "jdbc:mysql://localhost:3306/test"; //test es el nombre de la base de datos
       Class.forName ("com.mysql.jdbc.Driver").newInstance();
       conn = DriverManager.getConnection (url, userName, password);
       stmt = conn.createStatement();

@@ -18,8 +18,8 @@ public class ControlAltaAutor {
     editorial = new Editorial();
   }
 
-  public boolean Alta(int idUsuario,int idEditorial){
-      autor.crear(idUsuario,idEditorial);
+  public boolean Alta(String autorNombre, String titulo, int idRevista){
+      autor.crear(autorNombre, titulo, idRevista);
       return true;
   }
 }

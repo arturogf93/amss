@@ -3,12 +3,12 @@ import java.util.Date;
 import java.sql.*;
 import java.io.*;
 
-public class Autor {
+public class Cliente {
 
   Connection conn;
   Statement stmt;
 
-  public Autor(){
+  public Cliente(){
     try {
       String userName = "root"; //usuario de mysql.
       String password = "password"; //password de mysql.
@@ -54,10 +54,10 @@ public class Autor {
     }catch (Exception e) { System.out.println ("Cannot update database" + e ); }
   }
   
-  public void crear(String autor, String titulo, int idRevista){
+  public void crear(String nombre, String direccion, String usuario, String password, int copia){
       //String test = "45";
     try {
-      String s = "INSERT INTO Articulo (idRevista, autor, titulo)"+"VALUES ("+idRevista+",'"+autor+"','"+titulo+"')";
+      String s = "INSERT INTO Cliente (nombre, direccion, usuario, password, copia)"+"VALUES ('"+nombre+"','"+direccion+"','"+usuario+"','"+password+"',"+copia+")";
       System.out.println(s);
       stmt.executeUpdate(s);
     } catch (SQLException e) {
