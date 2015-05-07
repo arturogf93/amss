@@ -40,9 +40,9 @@ public class Juez {
     }catch (Exception e) { System.out.println ("Cannot update database" + e ); }
   }
 
-  public void crear(int usuario,int editorial){
+  public void crear(String nombre, String password){
       try {
-        String s = "INSERT INTO Juez (idJuez,idEditorial)"+"VALUES ("+usuario+","+editorial+")";
+        String s = "INSERT INTO Juez (nombre, password)"+"VALUES ('"+nombre+"','"+password+"')";
         System.out.println(s);
         stmt.executeUpdate(s);
       } catch (SQLException e) {}

@@ -55,7 +55,7 @@ public class InterfazAltaJuez extends HttpServlet {
     }
     out.println("<form data-abide method=\"GET\" action=\"AltaJuez\">");
     out.println("<p> Juez <input required type=\"text\" name=\"juez\" size=\"15\"></p>");
-    out.println("<p> Editorial <input required type=\"text\" name=\"editorial\" size=\"15\"></p>");
+    out.println("<p> Password <input required type=\"password\" name=\"password\" size=\"15\"></p>");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"validar\"/>");
     out.println("<input type=\"submit\" value=\"Enviar\"name=\"B1\" class=\"button radius success\">");
     out.println("<a href=\"index.html\" class=\"button radius\">Cancelar</a>");
@@ -69,15 +69,14 @@ public class InterfazAltaJuez extends HttpServlet {
   public void validarAlta(boolean error){
     cj = new ControlAltaJuez();
     //La funcion trim() elimina espacios antes y despues del valor
-    int juez = Integer.parseInt(thisRequest.getParameter("juez").trim());
-    int editorial = Integer.parseInt(thisRequest.getParameter("editorial").trim());
-    boolean seAlta = cj.AltaJuez(juez, editorial);
+    String nombre = (thisRequest.getParameter("juez"));
+    String password = (thisRequest.getParameter("password"));
+    boolean seAlta = cj.AltaJuez(nombre, password);
     if (seAlta){
-      out.println("<p>Juez dado de Alta</p>");
       out.println("<div data-alert class=\"alert-box radius success\">");
-      out.println("El juez " + juez + " fue dado de alta. Enhorabuena");
+      out.println("El juez " + nombre + " fue dado de alta");
       out.println("</div>");
-      out.println("<a href=\"index.html\" class=\"button radius\">Terminar</a>");
+      out.println("<a href=\"index.html\" class=\"button radius\">Regresar</a>");
       out.println("</BODY>");
       out.println("</HTML>");
     } else {

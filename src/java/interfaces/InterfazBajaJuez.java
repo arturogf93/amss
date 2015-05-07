@@ -40,7 +40,8 @@ public class InterfazBajaJuez extends HttpServlet {
     out.println("<h2>Dar de baja juez</h2>");
 
     String operacion = request.getParameter("operacion");
-    if(operacion == null){ // El menu nos envia un parametro para indicar el inicio de una transaccion
+    if(operacion == null)
+    {
       iniciarBaja(false);
     }else if(operacion.equals("validar")){
        validarBaja(false);

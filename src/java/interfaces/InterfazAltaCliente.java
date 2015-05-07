@@ -36,19 +36,13 @@ public class InterfazAltaCliente extends HttpServlet {
     out.println("<h2>Dar de alta Cliente</h2>");
     String operacion = request.getParameter("operacion");
     if(operacion == null){ // El menu nos envia un parametro para indicar el inicio de una transaccion
-        iniciarAlta(false);
+        input();
     }else if(operacion.equals("validar")){
-       validarAlta(false);
+       registrar();
     }
   }
-  public void iniciarAlta(boolean error){
+  public void input(){
     out.println("<p>Escriba todos los datos.</p>");
-    if (error){
-      out.println("<div data-alert class=\"alert-box warning radius\">");
-      out.println("Error en idAutor y/o idEditorial");
-      out.println("<a href=\"#\" class=\"close\">&times;</a>");
-      out.println("</div>");
-    }
     out.println("<form class =\"form-group\" data-abide method=\"GET\" action=\"AltaCliente\">");
         out.println("<div class=\"form-group\">");    
             out.println("<label for=\"nombre\">Nombre</label>");
@@ -78,7 +72,7 @@ public class InterfazAltaCliente extends HttpServlet {
     out.println("</BODY>");
     out.println("</HTML>");
   }
-  public void validarAlta(boolean error){
+  public void registrar(){
     out.println("validar");
     ca = new ControlAltaCliente();
     //La funcion trim() elimina espacios antes y despues del valor
@@ -93,13 +87,13 @@ public class InterfazAltaCliente extends HttpServlet {
       out.println("<div data-alert class=\"alert-box radius success\">");
       out.println("El Cliente " + nombre + " fue dado de alta.");
       out.println("</div>");
-      out.println("<a href=\"index.html\" class=\"button radius\">Terminar</a>");
+      out.println("<a href=\"index.html\" class=\"button radius\">Menu</a>");
       out.println("</div>");
       out.println("</BODY>");
       out.println("</HTML>");
     } else {
         out.println("falso");
-       iniciarAlta(true);
+       input();
     }
   }
 }

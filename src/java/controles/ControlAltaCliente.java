@@ -3,7 +3,6 @@ package controles;
 import entidades.*;
 import entidades.Autor;
 import entidades.Usuario;
-import entidades.Editorial;
 import javax.servlet.annotation.WebServlet;
 
 public class ControlAltaCliente {
